@@ -14,6 +14,11 @@ make Zallet easier to use.
 Zallet is not designed to be used as a Rust library; we give no guarantees about
 any such usage.
 
+To build Zallet you must have rust installed with a minimum version of `1.85`, for example:
+`cargo build --release`
+Then the `/path/to/zallet/target/release/zallet` binary can be run directly, or added to `$PATH`:
+`export PATH=$PATH:/path/to/zallet/target/release`
+
 ### Create a config file
 
 Pick a folder to use for Zallet, and create a `zallet.toml` file in it. You
