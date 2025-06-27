@@ -21,8 +21,8 @@ Then the `/path/to/zallet/target/release/zallet` binary can be run directly, or 
 
 ### Create a config file
 
-Pick a folder to use for Zallet, and create a `zallet.toml` file in it. You
-currently need at least the following:
+Pick a folder to use for Zallet, and create a `zallet.toml` file in it.
+Currently full paths are required, and you need at least the following:
 
 ```toml
 network = "main"
