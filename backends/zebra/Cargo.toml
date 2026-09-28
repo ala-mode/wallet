@@ -40,8 +40,10 @@ orchard = "0.15.0"
 # zebra-state 12 turns off. Without it `librocksdb-sys` builds bindgen without
 # `runtime`, and its build script panics ("a `libclang` shared library is not
 # loaded on this thread") as soon as another bindgen in the graph enables
-# `runtime` (bindgen 0.73 via libzcash_script, in a fresh resolution). Fixed in
-# zebra-state 14 (ZcashFoundation/zebra#11443); drop once zebra-state moves.
+# `runtime` (bindgen 0.73 via libzcash_script, in a fresh resolution). The root
+# cause is that bindgen's linking features are not additive
+# (rust-lang/rust-bindgen#2030). zebra-state 14 carries this same workaround
+# (ZcashFoundation/zebra#11443); drop it here once zebra-state moves.
 rocksdb = { version = "0.24", default-features = false, features = ["bindgen-runtime"] }
 sapling = { package = "sapling-crypto", version = "0.7" }
 serde = { version = "1", features = ["serde_derive"] }
